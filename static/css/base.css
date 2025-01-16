@@ -1,0 +1,133 @@
+/* Base Dracula Color Palette */
+:root {
+    --dracula-background: #282a36;
+    --dracula-current-line: #44475a;
+    --dracula-foreground: #f8f8f2;
+    --dracula-comment: #6272a4;
+    --dracula-cyan: #8be9fd;
+    --dracula-green: #50fa7b;
+    --dracula-orange: #ffb86c;
+    --dracula-pink: #ff79c6;
+    --dracula-purple: #bd93f9;
+    --dracula-red: #ff5555;
+    --dracula-yellow: #f1fa8c;
+}
+
+body {
+    background-color: var(--dracula-background);
+    color: var(--dracula-foreground);
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: var(--dracula-background);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--dracula-foreground) !important;
+}
+
+.nav-link:hover {
+    color: var(--dracula-pink) !important;
+}
+
+.nav-link.disabled {
+    color: var(--dracula-comment);
+}
+
+.container {
+    background-color: var(--dracula-current-line);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--dracula-purple);
+    border-color: var(--dracula-green);
+}
+
+.btn-primary:hover {
+    background-color: var(--dracula-pink);
+    border-color: var(--dracula-pink);
+}
+
+.btn-secondary {
+    background-color: var(--dracula-cyan);
+    border-color: var(--dracula-cyan);
+}
+
+.btn-secondary:hover {
+    background-color: var(--dracula-green);
+    border-color: var(--dracula-green);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dracula-yellow);
+}
+
+/* Links */
+a {
+    color: var(--dracula-cyan);
+}
+
+a:hover {
+    color: var(--dracula-orange);
+}
+
+/* Card Component (if using) */
+.card {
+    background-color: var(--dracula-current-line);
+    border: 1px solid var(--dracula-footer);
+}
+
+.card-header,
+.card-footer {
+    background-color: var(--dracula-footer);
+}
+
+.card-body {
+    color: white;
+}
+
+/* Table */
+table {
+    background-color: var(--dracula-current-line);
+    color: var(--dracula-foreground);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    border: 1px solid var(--dracula-background);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--dracula-current-line);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dracula-current-line);
+    color: white;
+    padding: 20px 0;
+}
+
+/* Override Bootstrap Navbar's active state */
+.navbar-nav .nav-link.active {
+    color: var(--dracula-cyan) !important;
+}
+
+form > p > input,
+form > p > textarea {
+    font-size: 20;
+    border-radius: 8px;
+    width: 100%;
+}
+
+form > input {
+    font-size: 20;
+    width: 50%; 
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Issues{% endblock title %}
+
+{% block content %}
+<h1>{{title}} Issue</h1>
+{% for issues in issue_list %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ issue.title }}</h5>
+        <p class="card-text">{{ issue.body|truncatechars:64 }}</p>
+
+        <a href="{% url 'detail' issue.id %}" class="card-link">Continue reading...</a>
+    </div>
+</div>
+<br />
+{% endfor %}
+{% endblock content %}
