@@ -23,5 +23,4 @@ from django.contrib.auth import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("page.urls")),
-    path('issues/', include("issues.urls")),
 ]

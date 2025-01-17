@@ -26,24 +26,8 @@
             <div class="navbar-nav">
               
               <a class="nav-link" href="{% url 'home' %}">Home</a>
-              <a class="nav-link" href="{% url 'list' %}">Issue</a>
               <a class="nav-link" href="{% url 'about' %}">About</a>
 
-              {% if user.is_authenticated %}
-              <a class="nav-link" href="{% url 'new' %}">New issue</a>
-              <a class="nav-link" href="{% url 'to_do' %}">To Do</a>
-              <a class="nav-link" href="{% url 'in_progress' %}">In Progress</a>
-              <a class="nav-link" href="{% url 'done' %}">Done</a>
-              <form method="POST" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <input type="submit" class="nav-link" value="Log Out">
-              </form>
-              {% else %}
-              <a class="nav-link" href="{% url 'login' %}">Log In</a>
-              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-              {% endif %}
-
-              
             </div>
           </div>
         </div>
