@@ -1,7 +1,59 @@
 {% extends 'base.html' %}
 
+
 {% block title %}Issue{% endblock title %}
 
 {% block content %}
 <h1>Issues</h1>
+<div class="row">
+    <h4>To Do</h4>
+    <div class="col-4">
+        {% for issue in to_do_list %}
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Issue #{{ issue.id }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ issue.name }}</h6>
+                    <p class="card-text">{{ issue.summary|truncatechars:32 }}</p>
+                    <a href="{% url 'detail' issue.id %}" class="card-link">More</a>
+                </div>
+            </div>
+        </div>
+        <br  />
+        {% endfor %}
+    </div>
+    <br />
+    <h4>In Progress</h4>
+    <div class="col-4">
+        {% for issue in in_progress_list %}
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Issue #{{ issue.id }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ issue.name }}</h6>
+                    <p class="card-text">{{ issue.summary|truncatechars:32 }}</p>
+                    <a href="{% url 'detail' issue.id %}" class="card-link">More</a>
+                </div>
+            </div>
+        </div>
+        <br  />
+        {% endfor %}
+    </div>
+    <h4>Done</h4>
+    <div class="col-4">
+        {% for issue in done_list %}
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Issue #{{ issue.id }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ issue.name }}</h6>
+                    <p class="card-text">{{ issue.summary|truncatechars:32 }}</p>
+                    <a href="{% url 'detail' issue.id %}" class="card-link">More</a>
+                </div>
+            </div>
+        </div>
+        <br  />
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}
