@@ -6,4 +6,4 @@ class IssueAdmin(admin.ModelAdmin):
         "name", "summary", "reporter", "assignee", "created_on" 
     ]
 
-    admin_site.register(Issue, IssueAdmin)
+    admin.site.register(Issue, IssueAdmin)
