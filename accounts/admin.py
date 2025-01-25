@@ -18,7 +18,7 @@ class CustomUserAdmin(UserAdmin):
             None, {
                 "classes": ("wide",),
                 "fields": ("email", "role", "team", "password1", "password2"),
-            }
+                }
         ),
     )
     fieldsets = UserAdmin.fieldsets + (

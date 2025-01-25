@@ -2,30 +2,30 @@
 
 from django.db import migrations
 
-def populate_teams(apps, schemaeditor):
+def populate_teams_and_roles(apps, schemaeditor):
     teams_entries = {
         "Alpha":"The A team",
         "Bravo":"The B team",
         "Charlie":"The C team"
     }
 
-    Team = apps.get_model("accounts", "Team")
-    for key, value in teams_entries.items():
-        teams_obj=Team(name=key, description=value)
-        teams_obj.save()
-
-
-def populate_roles(apps, schemaeditor):
-    roles_entries = {
+    role_entries = {
         "developer":"The person on the team who works on issues",
         "scrum master":"The team's coach",
         "product owner":"Team member in charge of defining product scope"
     }
 
+    Team = apps.get_model("accounts", "Team")
     Role = apps.get_model("accounts", "Role")
-    for key, value in roles_entries.items():
-        roles_obj=Role(name=key, description=value)
-        roles_obj.save()
+
+    for key, value in teams_entries.items():
+        status_obj=Team(name=key, description=value)
+        status_obj.save()
+
+
+    for key, value in role_entries.items():
+        status_obj=Role(name=key, description=value)
+        status_obj.save()
 
 
 class Migration(migrations.Migration):
@@ -35,6 +35,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(populate_teams),
-        migrations.RunPython(populate_roles)
+        migrations.RunPython(populate_teams_and_roles),
     ]
